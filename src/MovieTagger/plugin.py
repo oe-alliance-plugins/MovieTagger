@@ -1,5 +1,5 @@
-from __future__ import print_function
 # for localized messages
+from os.path import exists
 from . import _
 
 from Plugins.Plugin import PluginDescriptor
@@ -11,9 +11,9 @@ from Screens.InputBox import InputBox
 from Screens.MessageBox import MessageBox
 from Components.ActionMap import ActionMap
 from Components.MultiContent import MultiContentEntryText
-from enigma import eServiceReference, eListboxPythonMultiContent, eListbox, eServiceCenter, gFont, iServiceInformation, eServiceReference
+from enigma import eServiceReference, eListboxPythonMultiContent, eServiceCenter, gFont, iServiceInformation
 
-from Tools.Directories import *
+from Tools.Directories import resolveFilename, SCOPE_HDD
 
 VERSION = "1.3"
 
@@ -86,7 +86,7 @@ class MovieTagger(Screen):
 		self.onLayoutFinish.append(self.keyBlue)
 
 	def loadPreTags(self):
-		if pathExists(self.pretagfile):
+		if exists(self.pretagfile):
 			fp = open(self.pretagfile, "r")
 			t = fp.read()
 			fp.close()
@@ -175,7 +175,7 @@ class MovieTagger(Screen):
 			return False
 
 	def readMETAData(self, filename):
-		if pathExists(filename):
+		if exists(filename):
 			fp = open(filename, "r")
 			data = []
 			data.append(fp.readline())
@@ -188,7 +188,7 @@ class MovieTagger(Screen):
 			return False
 
 	def writeMETAData(self, filename, metadata):
-		if pathExists(filename):
+		if exists(filename):
 			fp = open(filename, "w")
 			fp.write(metadata[0])
 			fp.write(metadata[1])
@@ -204,13 +204,10 @@ class MovieTagger(Screen):
 		if yesno is True:
 			self.serviceHandler = eServiceCenter.getInstance()
 			root = eServiceReference("2:0:1:0:0:0:0:0:0:0:" + resolveFilename(SCOPE_HDD))
-			list = self.serviceHandler.list(root)
-			tags = set()
-			if list is None:
-				pass
-			else:
+			items = self.serviceHandler.list(root)
+			if items is not None:
 				while True:
-					serviceref = list.getNext()
+					serviceref = items.getNext()
 					if not serviceref.valid():
 						break
 					if serviceref.flags & eServiceReference.mustDescent:
@@ -315,7 +312,7 @@ def main(session, service, **kwargs):
 
 def Plugins(path, **kwargs):
 	try:
-		from Screens.TagEditor import TagEditor
+		from Screens.TagEditor import TagEditor  # noqa F401
 		return []
 	except ImportError:
 		return [PluginDescriptor(name="Movie Tagger", description=_("Movie Tagger..."), where=PluginDescriptor.WHERE_MOVIELIST, fnc=main)]
