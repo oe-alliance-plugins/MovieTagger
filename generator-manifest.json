@@ -1,0 +1,19 @@
+{
+  "branch": "main",
+  "depends_recipe": "",
+  "description_control": "Add tags to recorded movies, to sort a large list of movies",
+  "description_recipe": "",
+  "history_source_dir": "movietagger",
+  "internal_package_name": "enigma2-plugin-extensions-movietagger",
+  "module_dir_name": "MovieTagger",
+  "output_subdir": "movietagger",
+  "package_name": "enigma2-plugin-extensions-movietagger",
+  "plugin_src_rel": "movietagger",
+  "python_package": "MovieTagger",
+  "rdepends_recipe": "",
+  "replaces": "",
+  "repo_name": "MovieTagger",
+  "rrecommends": "",
+  "rreplaces": "",
+  "selected_from_plugin_list": true
+}
