@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - movietagger\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-27 21:28+0100\n"
+"POT-Creation-Date: 2026-04-08 10:12+0200\n"
 "PO-Revision-Date: 2012-02-29 22:56+0100\n"
 "Last-Translator: Spaeleus <spaeleus@croci.org>\n"
 "Language-Team: www.linsat.net <spaeleus@croci.org>\n"
@@ -19,21 +19,27 @@ msgstr ""
 "X-Poedit-Basepath: .../enigma2-plugins/movietagger\n"
 "X-Poedit-SearchPath-0: .../enigma2-plugins/movietagger\n"
 
+#: ../plugin.py:273
 msgid "Add Tag"
 msgstr "Agg. etich."
 
+#: ../plugin.py:266
 msgid "Add new Tag"
 msgstr "Nuova etich."
 
+#: ../plugin.py:257
 msgid "Assigned Tags"
 msgstr "Etich. assegnate"
 
+#: ../plugin.py:174
 msgid "Can't write movietags, because no meta-file found!"
 msgstr "Scrittura etichette impossibile: meta-file non trovato!"
 
+#: ../plugin.py:275
 msgid "Clear all Tags"
 msgstr "Rimuovere tutto"
 
+#: ../plugin.py:253
 msgid ""
 "Clear all Tags?\n"
 "\n"
@@ -45,35 +51,46 @@ msgstr ""
 "Verranno cancellati TUTTE le etichette di TUTTE le registrazioni!\n"
 "Proseguire comunque?"
 
+#: ../plugin.py:249
 msgid "Enter the new Tag"
 msgstr "Inserire la nuova etichetta"
 
+#: ../plugin.py:256
 msgid "Movie Tagger"
 msgstr "Movie Tagger"
 
+#: ../plugin.py:318
 msgid "Movie Tagger..."
 msgstr "Etichettare video..."
 
+#: ../plugin.py:261
 msgid "Predefined Tag"
 msgstr "Etich predefinita"
 
+#: ../plugin.py:265
 msgid "Remove Tag"
 msgstr "Canc. etich."
 
+#: ../plugin.py:258
 msgid "Specified Tags"
 msgstr "Etich specifica"
 
+#: ../plugin.py:268 ../plugin.py:276
 msgid "Toggle List"
 msgstr "Elenco On/Off"
 
+#: ../plugin.py:259
 msgid "Used Tag"
 msgstr "Etich. usata"
 
+#: ../plugin.py:260
 msgid "User-specific Tag"
 msgstr "Etich. personalizzata"
 
+#: ../plugin.py:256
 msgid "Ver."
 msgstr "Ver."
 
+#: ../plugin.py:249
 msgid "Whitepace will be replaced by \"_\""
 msgstr "Gli spazi saranno sostituiti da \"_\""
